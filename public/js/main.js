@@ -1,3 +1,5 @@
+const audio = $('audio');
+
 function loadSongs () {
 	const query = '/songs';
 	const options = {
@@ -17,13 +19,21 @@ function loadSongs () {
 
 			response.map(function(song) {
 				const newElement = $(`<li class="song">${song.name}</li>`);
-				newElement.appendTo(songsList);
+				newElement
+					.on('click', song, play)
+					.appendTo(songsList);
 			})
 
 		})
 		.catch(function(erro) {
 			console.log(erro);
 		});
+}
+
+function play(event) {
+	audio[0].pause();
+	audio.attr('src', `/songs/${event.data.name}`);
+	audio[0].play();
 }
 
 loadSongs();
