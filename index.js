@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const mediaserver = require('mediaserver');
 const app = express();
 
 app.use(express.static('public'));
@@ -16,6 +17,12 @@ app.get('/songs', function(req, res) {
 
 		res.json(JSON.parse(songs));
 	});
+});
+
+app.get('/songs/:name', function(req, res) {
+	const song = path.join(__dirname, 'songs', req.params.name);
+	mediaserver.pipe(req, res, song);
+
 });
 
 app.listen(3001, function() {

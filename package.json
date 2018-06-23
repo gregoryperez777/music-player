@@ -20,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "mediaserver": "^0.1.1"
   }
 }
