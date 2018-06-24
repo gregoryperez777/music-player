@@ -21,6 +21,10 @@ const upload = multer({
 
 app.use(express.static('public'));
 app.use('/jquery', express.static(path.join(__dirname, 'node_modules', 'jquery', 'dist')));
+app.use('/css', express.static(path.join(__dirname, 'public', 'css')));
+
+console.log(path.join(__dirname, 'public', 'css'));
+
 
 app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname,'/index.html'));

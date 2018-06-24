@@ -1,0 +1,35 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #121314;
+	color: #dfe0e6;
+}
+
+.app {
+	height: 100%;
+	width: 100%;
+	display: flex;
+}
+
+.content-left {
+	flex: 1;
+	overflow-y: auto;
+}
+
+.songs-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.song {
+	padding: 20px;
+	background: #1c1c1f;
+	border-bottom: 2px solid #121314;
+	cursor: pointer;
+}
+
+.content-right {
+
+}
