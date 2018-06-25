@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="with=device-width initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/main.css">
 	<title>Music Player</title>
 </head>
@@ -14,17 +14,30 @@
 		</div>
 
 		<div class="content-right">
-			<audio class="audio" controls src="/songs/Beautiful_day.mp3"></audio>
+			<div id="ecualizer">				
+			</div>
+
+			<audio 
+				class="audio" 
+				controls 
+				src="/songs/Beautiful_day.mp3">		
+			</audio>
 		</div>	
 
-		<form action="/songs" method="POST" enctype="multipart/form-data">
+		<form 
+			class="upload-form"
+			action="/songs" 
+			method="POST" 
+			enctype="multipart/form-data"
+		>
 			Upload song: 
 			<input type="file" name="song">
 			<input type="submit" value="upload">
 		</form>
 	</div>
 
-	<script src="/jquery/jquery.min.js"></script>
+	<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="/node_modules/siriwavejs/siriwave.js"></script>
 	<script src="/js/main.js"></script>
 </body>
 </html>

@@ -1,5 +1,11 @@
 const audio = $('audio');
 
+function play(event, ) {
+	audio[0].pause();
+	audio.attr('src', `/songs/${event.data.name}`);
+	audio[0].play();
+}
+
 function loadSongs () {
 	const query = '/songs';
 	const options = {
@@ -30,10 +36,12 @@ function loadSongs () {
 		});
 }
 
-function play(event) {
-	audio[0].pause();
-	audio.attr('src', `/songs/${event.data.name}`);
-	audio[0].play();
-}
-
 loadSongs();
+
+new SiriWave({
+	width: 640,
+	height: 100,
+	speed: 0.05,
+	container: document.getElementById('ecualizer'),
+	autostart: true,
+});
